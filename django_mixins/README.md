@@ -87,9 +87,15 @@ class Association(TempEntityClass, FoundingMixin):
 - it should only be necessary to implement these fields in the core models, i.e. they could be left out in the ontology models, as long as ontology models are not allowed to inherit from one another (than the auto craeted names from django will be unique anyway)
 - it would still be fine, if ontology models inherit from multiple core models (as long as all core models have these distinct explicit link fields)
 
-
 # ID Example
 
-As we shortly discussed the benefits of creating a unique ID space by creating a common base model for all other models, and as this specifically interferes with the multiple inheritance issue outlined above, I implemented example lookup functions that show that the inheritance tree can still be traversed easily, and an id visible in the root model can still be correctly attributed to the model class where it actually was defined. 
+As we shortly discussed the benefits of creating a unique ID space by creating a common base model for all other models, and as this specifically interferes with the multiple inheritance issue outlined above, I implemented example lookup functions that show that the inheritance tree can still be traversed easily, and an id visible in the root model can still be correctly attributed to the model class where it actually was defined.
 
 - see the ID lookup notebook for examples
+
+# Possible use cases
+
+- I think we could think of mixins as templates for common modelling problems, that encapsulate a certain solution that we can offer to our users, but leaving it to them which version of the mixin they want to implement.
+- still gives us control over what to expect, as we can build our architecture with our mixin solutions in mind
+- could not only be used for dates, but also for modelling provenance, authorship, maybe even whole factoids, date-ranges with interruptions, points in time, etc.
+- they might also facilitate modelling certain reification constructs.
