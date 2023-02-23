@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "django-mixins"
+version = "0.1.0"
+description = "Example project of the use of mixins to share fields and logic between different models in django."
+authors = ["Gregor Pirgie <gregor.pirgie@oeaw.ac.at>"]
+readme = "README.md"
+packages = [{include = "django_mixins"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.1.7"
+django-extensions = "^3.2.1"
+django-debug-toolbar = "^3.8.1"
+pandas = "^1.5.3"
+numpy = "^1.24.2"
+jupyter = "^1.0.0"
+ipython = "^8.10.0"
+mysqlclient = "^2.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
